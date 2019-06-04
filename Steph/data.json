@@ -1,0 +1,19 @@
+var products = [
+{
+    "image": "img/motah-blue.jpg",
+    "name": "BIJOUX BLEU",
+    "quantity": 1,
+    "price": 49.95
+},
+{
+    "image": "img/motah-red.jpg",
+    "name": "BIJOUX ROUGE",
+    "quantity": 1,
+    "price": 49.95
+},
+{
+    "image": "img/motah-silver.jpg",
+    "name": "BIJOUX ARGENTE",
+    "quantity": 1,
+    "price": 49.95
+}];

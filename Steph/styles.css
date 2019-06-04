@@ -1,3 +1,19 @@
 header, section, footer {
   padding: 5rem;
 }
+/* HEADER */
+nav a {
+    text-decoration: none;
+    padding: 0.5rem;
+    display: inline-block;
+    font-family: "Playfair Display";
+    border-bottom: 1px solid rgba(0,0,0,0);
+    color: inherit;
+}
+nav a:hover {
+    border-bottom: 1px solid;
+}
+
+.center {
+  text-align: center;
+}

@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:900|Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -92,6 +93,8 @@
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="data.json"></script>
     <script>
+
+        //jason loop
     for (let i = 0; i < products.length; i++) {
         document.getElementsByClassName("img")[i].innerHTML += "<img src=" + products[i].image + ">";
     }
@@ -102,13 +105,24 @@
 
     // button add to cart
     var cart = [];
-    var btn = document.getElementsByClassName("button");
+    var btn = $(".button");
 
+
+    //original
+    // for (let i = 0; i < btn.length; i++) {
+    //     btn[i].addEventListener("click", function() { btnAdd(products[i], i) }, false);
+    //     btn[i].addEventListener("click", function() { sum(cart) }, false);
+    // }
+
+    //translation
     for (let i = 0; i < btn.length; i++) {
-        btn[i].addEventListener("click", function() { btnAdd(products[i], i) }, false);
-        btn[i].addEventListener("click", function() { sum(cart) }, false);
+        $(btn[i]).on('click', function(){
+            btnAdd(products[i], i) });
+        $(btn[i]).on('click', function(){
+            sum(cart)});
     }
 
+    
     function btnAdd(product, i) {
         //if this product already exists then add +1 to its quantity
         if (cart[i] != undefined) {
@@ -118,23 +132,46 @@
         }
         rewriteCart();
     }
+    
+    //original
+    // overwrites previous cart 
+    // function rewriteCart() {
+    //     var minus = " class = 'minus'";
+    //     document.getElementById("bought").innerHTML = "";
+    //     for (let j = 0; j < cart.length; j++) {
+    //         if (cart[j] != undefined) {
+    //             document.getElementById("bought").innerHTML += "<p>" + cart[j].name + "</p>" + "<p>" + cart[j].quantity + "</p>" + "<p>" + cart[j].price * cart[j].quantity + "</p>" + "<button" + minus + ">" + "- </button";
+    //         }
+    //     }
+    //     //takes all minus buttons in the array and applies the remove from cart function to each one of them, if the item exists
+    //     var k = 0;
+    //     var minusButtons = document.getElementsByClassName("minus");
+    //     for (let j = 0; j < cart.length; j++) {
+    //         if (cart[j] != undefined) {
+    //             minusButtons[k].addEventListener("click", function() { removeFromCart(j) }, false);
+    //             k++;
+    //         }
+    //     }
+    // }
 
-    //overwrites previous cart 
+    //translation 
     function rewriteCart() {
-        var minus = " class = 'minus'";
-        document.getElementById("bought").innerHTML = "";
-        for (let j = 0; j < cart.length; j++) {
+        // var minus = " class = 'minus' ";
+        for (let j = 0; j < cart.length; j++){
             if (cart[j] != undefined) {
-                document.getElementById("bought").innerHTML += "<p>" + cart[j].name + "</p>" + "<p>" + cart[j].quantity + "</p>" + "<p>" + cart[j].price * cart[j].quantity + "</p>" + "<button" + minus + ">" + "- </button";
-            }
-        }
-        //takes all minus buttons in the array and applies the remove from cart function to each one of them, if the item exists
+                $("#bought").html("<p>" + cart[j].name + "</p> <p> " + cart[j].quantity + "</p> <p>" + cart[j].price * cart[j].quantity + "</p> <button class='minus'> - </button>"); 
+            
+                }
+            }   
+        
         var k = 0;
-        var minusButtons = document.getElementsByClassName("minus");
+        var minusButtons = $(".minus");
         for (let j = 0; j < cart.length; j++) {
             if (cart[j] != undefined) {
-                minusButtons[k].addEventListener("click", function() { removeFromCart(j) }, false);
-                k++;
+                $(minusButtons[k]).on('click', function(){
+                    removeFromCart(j);
+                    k++;
+                })
             }
         }
     }

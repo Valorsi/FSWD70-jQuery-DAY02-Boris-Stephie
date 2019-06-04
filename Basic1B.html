@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>itsyaboi</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style>
+		img {
+			width:10%;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="one"><img src="img/bells.png" alt="whydishere"><p class="uno"></p></div>
+	<div class="two"><img src="img/present.png" alt="whydishere"><p class="dos"></p></div>
+	<div class="three"><img src="img/santa-claus.png" alt="whydishere"><p class="tres"></p></div>
+
+	<script>
+		$(document).ready(function() {
+
+    $(".one").click(function() {
+        $(".uno").text('You clicked Bells');
+    });
+
+    $(".two").click(function() {
+        $(".dos").text("you clicked present");
+    });
+
+    $(".three").click(function() {
+        $(".tres").text("you clicked santa");
+    });
+});
+			
+
+	</script>
+		
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Christmas Bell</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">	
+	</script>
+	
+	<style> 
+		img {
+		 width: 10%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="one"> <img src="img/bells.png" alt="Bells"> <p class=une> </p></div>
+	<div class="two"><img src="img/present.png" alt="Present"> <p class="deux"> </p></div>
+	<div class="three"> <img src="img/santa-claus.png" alt="Santa"> <p class="trois"> </p></div>
+
+<script> 
+	$(document).ready(function(){
+
+		$('.one').click(function(){
+			$('.une').text('You clicked on the Christmas bell');
+		})
+		$('.two').click(function(){
+			$('.deux').text('You clicked on the Christmas bell');
+		})
+		$('.three').click(function(){
+			$('.trois').text('You clicked on the Christmas bell');
+		})
+	})
+</script>
+</body>
+</html>

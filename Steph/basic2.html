@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Basic 2 Exercise </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">	
+	</script>
+
+	<style>
+		img {
+			height: 10rem;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="line"> 
+		<img src="img/present.png" alt="Present"> 
+		<img class="santa" src ="img/santa-claus.png" alt="Santa">
+		<img src="img/bells.png" alt="Bells">
+	</div>
+
+
+	<div class="line2"> 
+		<img class="santa"src="img/santa-claus.png" alt="Santa">
+		<img src="img/present.png" alt="Present">
+		<img class="santa"src="img/santa-claus.png" alt="Santa">
+	 </div>
+
+
+	<div class="line3"> 
+		<img src="img/bells.png" alt="Bells"> 
+		<img class="santa"src="img/santa-claus.png" alt="Santa">
+		<img src="img/present.png" alt="Present">
+	</div>
+	
+
+
+
+<script> 
+	$('.santa').click(function(){
+		$(this).slideUp()
+	})
+	$('.santa').dblclick(function(){
+		$(this).hide()
+	})
+
+</script>
+</body>
+</html>
